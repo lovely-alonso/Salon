@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Salon - Services Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="{{ url_for('homepage') }}">Home</a>
+    <a href="{{ url_for('avail') }}">Menu</a>
+    <a href="{{ url_for('homepage') }}#about">About Us</a>
+    <a href="{{ url_for('homepage') }}#contact">Contact</a>
+    <a href="{{ url_for('form') }}">Form</a>
+</header>
+
+<div class="ordering-system">
+
+    <!-- Services List -->
+    <div class="services-list">
+        <h2>Manicure & Pedicure</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/plain-color.jpg') }}" alt="Plain Color">
+                <div class="service-info">
+                    <h4>Plain Color</h4>
+                    <p>₱70</p>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/simple-design.jpg') }}" alt="Simple Design">
+                <div class="service-info">
+                    <h4>Simple Design</h4>
+                    <p>₱100</p>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/complex-design.jpg') }}" alt="Complex Design">
+                <div class="service-info">
+                    <h4>Complex Design</h4>
+                    <p>₱150</p>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Haircut</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/women-haircut1.webp') }}" alt="Women Haircut">
+                <div class="service-info">
+                    <h4>Women Haircut</h4>
+                    <p>₱100</p>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/men-haircut1.webp') }}" alt="Men Haircut">
+                <div class="service-info">
+                    <h4>Men Haircut</h4>
+                    <p>₱90</p>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Makeup</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/simplemakeup.webp') }}" alt="Simple Makeup">
+                <div class="service-info">
+                    <h4>Simple Makeup</h4>
+                    <p>₱250</p>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/dragmakeup.webp') }}" alt="Glam Makeup">
+                <div class="service-info">
+                    <h4>Glam Makeup</h4>
+                    <p>₱400</p>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Hair Coloring</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/blendcolor1.webp') }}" alt="Highlights">
+                <div class="service-info">
+                    <h4>Highlights</h4>
+                    <p>₱300</p>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/fullcolor.jpg') }}" alt="Full Hair Color">
+                <div class="service-info">
+                    <h4>Full Hair Color</h4>
+                    <p>₱500</p>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Waxing</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/eyebrows-wax.jpg') }}" alt="Eyebrow Wax">
+                <div class="service-info">
+                    <h4>Eyebrow Wax</h4>
+                    <p>₱80</p>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/armpit-wax.jpg') }}" alt="Underarm Wax">
+                <div class="service-info">
+                    <h4>Underarm Wax</h4>
+                    <p>₱120</p>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Haircare</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/haircare.jpg') }}" alt="Hair Treatment">
+                <div class="service-info">
+                    <h4>Hair Treatment</h4>
+                    <p>₱250</p>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/rebond.jpg') }}" alt="Hair Rebond">
+                <div class="service-info">
+                    <h4>Hair Rebond</h4>
+                    <p>₱800</p>
+                    <button class="book-now-button">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <div class="order-summary">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: ₱<span id="total">0</span></p>
+       <button class="checkout-btn" onclick="window.location.href='{{ url_for('form') }}'">Checkout</button>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

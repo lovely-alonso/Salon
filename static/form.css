@@ -1,0 +1,114 @@
+
+        body {
+            background: linear-gradient(135deg, #f7b1db, #c186ec);
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+             background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+        }
+
+        header nav a {
+           color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 20px;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        header nav a:hover {
+           color: #9c27b0;
+    transform: scale(1.1);
+        }
+
+        h3 {
+            color: #fff;
+            font-size: 48px;
+            text-align: center;
+            margin-top: 50px;
+            font-weight: 600;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 8px;
+            color: #5c3f70;
+        }
+
+        form input, form select, form textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+
+        form input[type="radio"] {
+            width: auto;
+        }
+
+        form input:focus, form select:focus, form textarea:focus {
+            border-color: #db5feb;
+        }
+
+        form textarea {
+            resize: vertical;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn-container input, .btn-container button {
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-container input[type="submit"] {
+            background-color: #f5a5e1;
+            border: none;
+        }
+
+        .btn-container input[type="reset"] {
+            background-color: #db5feb;
+            border: none;
+        }
+
+        .btn-container input[type="button"] {
+            background-color: #5c3f70;
+            color: white;
+            border: none;
+        }
+
+        .btn-container input[type="submit"]:hover, .btn-container button:hover, .btn-container input[type="button"]:hover {
+            background-color: #db5feb;
+        }
+

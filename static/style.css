@@ -1,0 +1,279 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f7b1db, #c186ec);
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 20px;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #9c27b0;
+    transform: scale(1.1);
+}
+/* Main Layout */
+.main-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px 40px;
+    flex-wrap: wrap;
+}
+
+/* Left Section */
+.left-side {
+    text-align: center;
+    flex: 1;
+}
+
+.logo {
+    width: 550px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.left-side h2 {
+    font-size: 28px;
+    color: #333;
+    margin-top: 20px;
+}
+
+
+.book-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 35px;
+    background-color: white;
+    color: #7b47b8;
+    font-size: 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.book-btn:hover {
+    background-color: #7b47b8;
+    color: white;
+
+}
+
+/* Right Section */
+.right-side {
+    max-width: 480px;
+    background: rgba(255,255,255,0.8);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.right-side h3 {
+    font-size: 24px;
+    color: #7b47b8;
+}
+
+.right-side p {
+    font-size: 16px;
+    color: #333;
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.product-img {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(255,255,255,0.3);
+    backdrop-filter: blur(8px);
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-left h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-left p, .footer-left a {
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.social-icons img {
+    width: 30px;
+    margin: 10px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.qr-code {
+    width: 120px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: white;
+    padding: 5px;
+}
+
+/* Review Section */
+.review-section {
+    background: rgba(255, 255, 255, 0.7);
+    margin: 50px auto;
+    padding: 50px 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.review-section h2 {
+    color: #7b47b8;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* Layout: Form on LEFT, Reviews on RIGHT */
+.reviews-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* LEFT side — Review Form */
+.review-form {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 320px;
+    text-align: left;
+}
+
+.review-form h3 {
+    text-align: center;
+    color: #7b47b8;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.review-form button {
+    background-color: #7b47b8;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto 0;
+    transition: all 0.3s ease;
+}
+
+.review-form button:hover {
+    background-color: #5d319a;
+}
+
+/* RIGHT side — Customer Reviews */
+.reviews-container {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.review {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 260px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.review:hover {
+    transform: translateY(-5px);
+}
+
+.review h4 {
+    color: #f1c40f;
+    margin-bottom: 10px;
+}
+
+.review p {
+    font-size: 15px;
+    color: #333;
+}
+
+.review span {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .reviews-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+
+
+footer .copyright {
+    font-size: 14px;
+    margin-top: 20px;
+}
