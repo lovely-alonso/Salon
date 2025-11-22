@@ -1,0 +1,197 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f7b1db, #c186ec);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0 20px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #7b47b8; /* Highlight hover with primary accent color */
+    text-decoration: none;
+}
+
+
+/* Main layout */
+.ordering-system {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    gap: 30px;
+}
+
+/* Services list */
+.services-list {
+    flex: 3;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+}
+
+.services-list h2 {
+    text-align: left;
+    font-size: 1.8rem;
+    color: #7b1fa2;
+    margin: 30px 0 20px;
+    border-left: 5px solid #9c27b0;
+    padding-left: 10px;
+}
+
+/* Services grid (2–3 items per row) */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Each service card */
+.service-item {
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px solid #e1bee7;
+}
+
+.service-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.service-info h4 {
+    color: #6a1b9a;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.service-info p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+/* Book Now Button */
+.book-now-button {
+    background: linear-gradient(135deg, #9c27b0, #ba68c8);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(156, 39, 176, 0.3);
+}
+
+.book-now-button:hover {
+    background: linear-gradient(135deg, #ba68c8, #9c27b0);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(156, 39, 176, 0.4);
+}
+
+/* Cart section */
+.order-summary {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.order-summary h2 {
+    color: #7b1fa2;
+    margin-bottom: 15px;
+}
+
+.order-summary ul {
+    list-style: none;
+    margin: 15px 0;
+    padding: 0;
+    text-align: left;
+}
+
+.order-summary li {
+    padding: 8px;
+    margin: 8px 0;
+    background: rgba(156, 39, 176, 0.05);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkout-btn {
+    background: linear-gradient(135deg, #ab47bc, #8e24aa);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-top: 10px;
+}
+
+.checkout-btn:hover {
+    background: linear-gradient(135deg, #8e24aa, #ab47bc);
+    transform: scale(1.05);
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .ordering-system {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .order-summary {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .services-list {
+        width: 100%;
+    }
+}

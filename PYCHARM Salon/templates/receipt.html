@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt - Beauty Salon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+</head>
+<body>
+    <h3>Receipt</h3>
+
+    <div style="background-color: white; max-width: 600px; margin: 30px auto; padding: 20px; border-radius: 10px;">
+        <h4>Customer Information</h4>
+        <p><b>Name:</b> {{ name }}</p>
+        <p><b>Phone:</b> {{ phone }}</p>
+        <p><b>Gender:</b> {{ gender }}</p>
+        <p><b>Appointment Time:</b> {{ appointment_time }}</p>
+
+        <h4>Services Booked:</h4>
+        <ul>
+            {% for item in cart %}
+                <li>{{ item.name }} - ₱{{ item.price }}</li>
+            {% endfor %}
+        </ul>
+
+        <p><b>Total:</b> ₱{{ total }}</p>
+
+        <h4>Special Request:</h4>
+        <p>{{ message }}</p>
+
+        <div class="btn-container">
+            <input type="button" value="Back to Home" onclick="window.location.href='{{ url_for('homepage') }}';">
+        </div>
+    </div>
+</body>
+</html>

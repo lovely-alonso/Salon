@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Salon - Services Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+</head>
+<body>
+
+ <header class="navbar">
+       <nav>
+    <a href="{{ url_for('homepage') }}">Home</a>
+    <a href="{{ url_for('avail') }}">Menu</a>
+    <a href="{{ url_for('homepage') }}#about">About Us</a>
+    <a href="{{ url_for('form') }}">Form</a>
+    <a href="{{ url_for('booking_history') }}">Booking History</a>
+    <a href="{{ url_for('add_review') }}">Give Review</a>
+</nav>
+
+    </header>
+
+<div class="ordering-system">
+
+    <!-- Services List -->
+    <div class="services-list">
+        <h2>Manicure & Pedicure</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/plain-color.jpg') }}" alt="Plain Color">
+                <div class="service-info">
+                    <h4>Plain Color</h4>
+                    <p>₱70</p>
+                    <button class="book-now-button" data-name="Plain Color" data-price="70">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/simple-design.jpg') }}" alt="Simple Design">
+                <div class="service-info">
+                    <h4>Simple Design</h4>
+                    <p>₱100</p>
+                    <button class="book-now-button" data-name="Simple Design" data-price="100">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/complex-design.jpg') }}" alt="Complex Design">
+                <div class="service-info">
+                    <h4>Complex Design</h4>
+                    <p>₱150</p>
+                    <button class="book-now-button" data-name="Complex Design" data-price="150">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Haircut</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/women-haircut.jpg') }}" alt="Women Haircut">
+                <div class="service-info">
+                    <h4>Women Haircut</h4>
+                    <p>₱100</p>
+                    <button class="book-now-button" data-name="Women Haircut" data-price="100">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/men-haircut.jpg') }}" alt="Men Haircut">
+                <div class="service-info">
+                    <h4>Men Haircut</h4>
+                    <p>₱90</p>
+                    <button class="book-now-button" data-name="Men Haircut" data-price="90">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Makeup</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/makeup.jpg') }}" alt="Simple Makeup">
+                <div class="service-info">
+                    <h4>Simple Makeup</h4>
+                    <p>₱250</p>
+                    <button class="book-now-button" data-name="Simple Makeup" data-price="250">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/heavy-makeup.jpg') }}" alt="Glam Makeup">
+                <div class="service-info">
+                    <h4>Glam Makeup</h4>
+                    <p>₱400</p>
+                    <button class="book-now-button" data-name="Glam Makeup" data-price="400">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Hair Coloring</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/blend-color.jpg') }}" alt="Highlights">
+                <div class="service-info">
+                    <h4>Highlights</h4>
+                    <p>₱300</p>
+                    <button class="book-now-button" data-name="Highlights" data-price="300">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/hair-coloring.jpg') }}" alt="Full Hair Color">
+                <div class="service-info">
+                    <h4>Full Hair Color</h4>
+                    <p>₱500</p>
+                    <button class="book-now-button" data-name="Full Hair Color" data-price="500">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Waxing</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/eyebrows-wax.jpg') }}" alt="Eyebrow Wax">
+                <div class="service-info">
+                    <h4>Eyebrow Wax</h4>
+                    <p>₱80</p>
+                    <button class="book-now-button" data-name="Eyebrow Wax" data-price="80">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/armpit-wax.jpg') }}" alt="Underarm Wax">
+                <div class="service-info">
+                    <h4>Underarm Wax</h4>
+                    <p>₱120</p>
+                    <button class="book-now-button" data-name="Underarm Wax" data-price="120">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <h2>Haircare</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/haircare.jpg') }}" alt="Hair Treatment">
+                <div class="service-info">
+                    <h4>Hair Treatment</h4>
+                    <p>₱250</p>
+                    <button class="book-now-button" data-name="Hair Treatment" data-price="250">Book Now</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <img src="{{ url_for('static', filename='images/rebond.jpg') }}" alt="Hair Rebond">
+                <div class="service-info">
+                    <h4>Hair Rebond</h4>
+                    <p>₱800</p>
+                    <button class="book-now-button" data-name="Hair Rebond" data-price="800">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <div class="order-summary">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: ₱<span id="total">0</span></p>
+        <button class="checkout-btn" id="checkout">Checkout</button>
+    </div>
+
+</div>
+
+<script>
+    let cart = [];
+    const cartList = document.getElementById('cart-items');
+    const totalDisplay = document.getElementById('total');
+
+    // Add service to cart
+    document.querySelectorAll('.book-now-button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const name = btn.dataset.name;
+            const price = parseInt(btn.dataset.price);
+            cart.push({ name, price });
+            renderCart();
+        });
+    });
+
+    // Display cart with remove buttons
+    function renderCart() {
+        cartList.innerHTML = '';
+        let total = 0;
+        cart.forEach((item, index) => {
+            total += item.price;
+            const li = document.createElement('li');
+            li.innerHTML = `
+                ${item.name} - ₱${item.price}
+                <button class="remove-btn" onclick="removeItem(${index})" style="margin-left:10px; background:#f87171; color:white; border:none; border-radius:4px; padding:2px 6px; cursor:pointer;">✖</button>
+            `;
+            cartList.appendChild(li);
+        });
+        totalDisplay.textContent = total;
+    }
+
+    // Remove item from cart
+    function removeItem(index) {
+        cart.splice(index, 1);
+        renderCart();
+    }
+
+    // Save cart and redirect to form
+    async function saveCartAndRedirect() {
+        if (cart.length === 0) {
+            alert("Your cart is empty! Please add at least one service before checkout.");
+            return;
+        }
+
+        const total = cart.reduce((sum, i) => sum + i.price, 0);
+
+        await fetch('/save_cart', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({cart, total})
+        });
+
+        window.location.href = "{{ url_for('form') }}";
+    }
+
+    // Checkout button
+    document.getElementById('checkout').addEventListener('click', saveCartAndRedirect);
+</script>
+
+</body>
+</html>

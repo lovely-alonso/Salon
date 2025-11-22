@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Booking History | Beauty Salon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+</head>
+<body>
+
+ <header class="navbar">
+       <nav>
+    <a href="{{ url_for('homepage') }}">Home</a>
+    <a href="{{ url_for('avail') }}">Menu</a>
+    <a href="{{ url_for('homepage') }}#about">About Us</a>
+    <a href="{{ url_for('form') }}">Form</a>
+    <a href="{{ url_for('booking_history') }}">Booking History</a>
+    <a href="{{ url_for('add_review') }}">Give Review</a>
+</nav>
+
+    </header>
+
+<h3>Your Booking History</h3>
+
+<div class="form-container" style="max-width:1100px;">
+    <div style="width:100%; background: white; padding:20px; border-radius:10px;">
+        {% if appointments %}
+            <table style="width:100%; border-collapse:collapse;">
+                <thead>
+                    <tr style="background:#f2e4ff; color:#7a2bbd;">
+                        <th style="padding:10px;">ID</th>
+                        <th style="padding:10px;">Service(s)</th>
+                        <th style="padding:10px;">Date & Time</th>
+                        <th style="padding:10px;">Total</th>
+                        <th style="padding:10px;">Status</th>
+                        <th style="padding:10px;">Special Request</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for a in appointments %}
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:10px; text-align:center;">{{ a.id }}</td>
+                        <td style="padding:10px;">
+                            {% if a.cart %}
+                                <ul style="list-style:none; padding-left:0; margin:0;">
+                                    {% for item in a.cart %}
+                                        <li>{{ item.name }} - ₱{{ item.price }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% else %}
+                                {{ a.service or '—' }}
+                            {% endif %}
+                        </td>
+                        <td style="padding:10px; text-align:center;">{{ a.appointment_time }}</td>
+                        <td style="padding:10px; text-align:center;">₱{{ a.total }}</td>
+                        <td style="padding:10px; text-align:center;">{{ a.status }}</td>
+                        <td style="padding:10px;">{{ a.message if a.message else 'None' }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p style="text-align:center; color:#c92121;">You have no bookings yet.</p>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Leave a Review | Beauty Salon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+ <header class="navbar">
+       <nav>
+    <a href="{{ url_for('homepage') }}">Home</a>
+    <a href="{{ url_for('avail') }}">Menu</a>
+    <a href="{{ url_for('homepage') }}#about">About Us</a>
+    <a href="{{ url_for('form') }}">Form</a>
+    <a href="{{ url_for('booking_history') }}">Booking History</a>
+    <a href="{{ url_for('add_review') }}">Give Review</a>
+</nav>
+
+    </header>
+
+<section class="review-section" style="padding-top:40px;">
+    <div class="reviews-wrapper">
+        <div class="review-form">
+            <h3>Leave a Review</h3>
+            <form method="POST">
+                <label for="name">Name (optional)</label>
+                <input type="text" name="name" placeholder="Your name">
+
+                <label for="rating">Rating</label>
+                <select name="rating" required>
+                    <option value="5">5 — Excellent</option>
+                    <option value="4">4 — Very Good</option>
+                    <option value="3">3 — Good</option>
+                    <option value="2">2 — Fair</option>
+                    <option value="1">1 — Poor</option>
+                </select>
+
+                <label for="comment">Review</label>
+                <textarea name="comment" rows="5" placeholder="Share your experience..." required></textarea>
+
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>
+
+        <div class="reviews-container" style="align-items:flex-start;">
+            <h3 style="width:100%; color:#7b47b8; margin-top:0;">Recent Reviews</h3>
+          {% for r in reviews %}
+
+                <!-- placeholder — homepage shows real reviews -->
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

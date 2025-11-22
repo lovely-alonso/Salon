@@ -1,0 +1,53 @@
+<div class="receipt-container" style="
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+">
+    <h3 style="color: #5c3f70; text-align: center; margin-top: 0; font-size: 36px;">✅ Appointment Confirmed!</h3>
+    <p style="text-align: center; margin-bottom: 20px; color: #333;">Thank you for booking with Beauty Salon. Here is your receipt.</p>
+
+    <hr style="border-top: 1px solid #db5feb;">
+
+    <h4 style="color: #5c3f70; margin-top: 20px; font-size: 20px;">Customer Details:</h4>
+    <p><strong>Name:</strong> {{ receipt.customer.name }}</p>
+    <p><strong>Phone:</strong> {{ receipt.customer.phone }}</p>
+    <p><strong>Gender:</strong> {{ receipt.customer.sex | default('N/A') }}</p>
+    <p><strong>Time:</strong> {{ receipt.customer.appointment_time }}</p>
+    <p><strong>Special Requests:</strong> {{ receipt.customer.requests }}</p>
+
+    <hr style="border-top: 1px solid #db5feb;">
+
+    <h4 style="color: #5c3f70; margin-top: 20px; font-size: 20px;">Order Summary:</h4>
+    <ul style="list-style: none; padding: 0;">
+        {% for item in receipt.items %}
+        <li style="display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px dashed #eee;">
+            <span style="color: #555;">{{ item.name }}</span>
+            <span style="font-weight: 600;">₱{{ item.price }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <hr style="border-top: 2px solid #5c3f70; margin-top: 15px;">
+
+    <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.4em; color: #5c3f70; padding-top: 10px;">
+        <span>GRAND TOTAL:</span>
+        <span>₱{{ receipt.total }}</span>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="{{ url_for('homepage') }}" style="
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #f5a5e1;
+            color: #333;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        ">Back to Homepage</a>
+    </div>
+
+</div>

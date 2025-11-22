@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin — Users | Beauty Salon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+    <style>
+        /* This internal style helps match the admin.css theme for new elements */
+        .logout-btn {
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: #9c4dcc;
+            color: white;
+            transition: background-color 0.3s;
+        }
+        .logout-btn:hover { background-color: #7b2fae; }
+        header div { display: flex; gap: 10px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Admin — Users</h1>
+    <div>
+        <a href="{{ url_for('admin_dashboard') }}" class="logout-btn" style="background:#555;">Appointments</a>
+        <a href="{{ url_for('admin_reviews') }}" class="logout-btn" style="background:#6a1b9a;">Reviews</a>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+    </div>
+</header>
+
+<main style="padding:30px;">
+    <div style="background:white; padding:20px; border-radius:12px;">
+        <h2>Registered Users</h2>
+
+        {% if users %}
+            <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Action</th> </tr>
+                </thead>
+                <tbody>
+                    {% for u in users %}
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:10px; text-align:center;">{{ u[0] }}</td>
+                        <td style="padding:10px;">{{ u[1] }}</td>
+                        <td style="padding:10px; text-align:center;">{{ u[2] }}</td>
+
+                        <td style="padding:10px; text-align:center;">
+                            <a href="{{ url_for('admin_users', user_id=u[0]) }}"
+                               style="color:red; text-decoration:none; font-weight:bold;"
+                               onclick="return confirm('WARNING: This will delete ALL user data (appointments, reviews). Proceed?');">
+                               Delete
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p style="text-align:center; color:#c92121;">No users found.</p>
+        {% endif %}
+    </div>
+</main>
+
+</body>
+</html>

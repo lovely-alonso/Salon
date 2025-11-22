@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin — Reviews | Beauty Salon</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Admin — Reviews</h1>
+    <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+</header>
+
+<main style="padding:30px;">
+    <div style="background:white; padding:20px; border-radius:12px;">
+        <h2>Customer Reviews</h2>
+
+        {% if reviews %}
+            <table style="width:100%; border-collapse:collapse; margin-top:10px;">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Customer</th>
+                        <th>Rating</th>
+                        <th>Comment</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for r in reviews %}
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:10px; text-align:center;">{{ r.id }}</td>
+                        <td style="padding:10px;">{{ r.name or 'Anonymous' }}</td>
+                        <td style="padding:10px; text-align:center;">{{ r.rating }}</td>
+                        <td style="padding:10px;">{{ r.comment }}</td>
+                        <td style="padding:10px;">{{ r.date }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p style="text-align:center; color:#c92121;">No reviews yet.</p>
+        {% endif %}
+    </div>
+</main>
+
+</body>
+</html>

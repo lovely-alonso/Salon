@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Salon - Appointment Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+</head>
+<body>
+
+ <header class="navbar">
+       <nav>
+    <a href="{{ url_for('homepage') }}">Home</a>
+    <a href="{{ url_for('avail') }}">Menu</a>
+    <a href="{{ url_for('homepage') }}#about">About Us</a>
+    <a href="{{ url_for('form') }}">Form</a>
+    <a href="{{ url_for('booking_history') }}">Booking History</a>
+    <a href="{{ url_for('add_review') }}">Give Review</a>
+
+</nav>
+
+    </header>
+
+<h3>Appointment Form</h3>
+
+<div class="form-container">
+    <!-- LEFT SIDE - CUSTOMER FORM -->
+    <form method="POST" class="left-form">
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="sex">Gender:</label>
+        <input type="radio" name="sex" value="Male"> Male
+        <input type="radio" name="sex" value="Female"> Female
+
+
+        <label for="meeting-time">Choose Appointment Time:</label>
+        <input type="datetime-local" name="meeting-time" id="meeting-time" required>
+
+        <label for="message">Special Requests:</label>
+        <textarea name="message" id="message" cols="30" rows="4"></textarea>
+
+        <div class="btn-container">
+            <input type="submit" value="Submit">
+            <button type="reset">Reset</button>
+            <input type="button" value="Done" onclick="window.location.href='{{ url_for('homepage') }}';">
+        </div>
+    </form>
+
+    <!-- RIGHT SIDE - BOOKED SERVICES SUMMARY -->
+    <div class="cart-display">
+        <h4>Your Booked Services:</h4>
+        <ul>
+            {% if cart %}
+                {% for item in cart %}
+                <li>
+                    <span>{{ item.name }}</span>
+                    <strong>₱{{ item.price }}</strong>
+                </li>
+                {% endfor %}
+                <hr>
+                <li class="total">
+                    <span>Total Amount:</span>
+                    <span>₱{{ total }}</span>
+                </li>
+            {% else %}
+                <li style="color:red; text-align:center;">No services selected.
+                    Go to <a href="{{ url_for('avail') }}" style="color:#db5feb;">Menu</a> to book.
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

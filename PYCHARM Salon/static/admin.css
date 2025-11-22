@@ -1,0 +1,153 @@
+/* General Body and Layout */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  background: linear-gradient(135deg, #f7b1db, #c186ec);
+    color: #333;
+}
+
+header {
+     background-color: rgba(255, 255, 255, 0.3); /* Deep Purple Theme Color */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header div {
+    display: flex;
+    gap: 10px; /* Space between navigation buttons */
+}
+
+/* Logout and Nav Buttons */
+.logout-btn {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #9c4dcc; /* Lighter Purple/Accent Color */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #7b2fae; /* Slightly darker hover for interaction */
+}
+
+/* Main Content and Section Styling */
+main {
+    padding: 20px;
+}
+
+.appointments {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.appointments h2 {
+    color: #6a1b9a;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Filters Section */
+.filters {
+    padding: 10px 0;
+    margin-bottom: 15px !important; /* Overrides inline style margin-bottom */
+    font-size: 1em !important; /* Overrides inline style font-size */
+}
+
+.filters a {
+    text-decoration: none;
+    color: #6a1b9a;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.filters a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+table thead th {
+    background-color: #f8f8f8;
+    color: #6a1b9a;
+    text-align: left;
+    padding: 12px;
+    border-bottom: 2px solid #ddd;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #eee;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody td {
+    padding: 12px;
+    vertical-align: top;
+}
+
+/* Specific Element Styling */
+td ul {
+    margin: 0;
+    list-style-type: none !important;
+}
+
+td ul li {
+    padding: 2px 0;
+    font-size: 0.9em;
+}
+
+/* Status Update Button Styling (Matching inline style) */
+td form button[type="submit"] {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background: #9c4dcc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+td form button[type="submit"]:hover {
+    background: #7b2fae;
+}
+
+/* Delete Link Styling */
+td a {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+/* General Link/Select Alignment */
+td form, td a {
+    white-space: nowrap;
+}
